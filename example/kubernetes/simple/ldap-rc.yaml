@@ -15,7 +15,11 @@ spec:
     spec:
       containers:
         - name: ldap
+<<<<<<< HEAD
+          image: chicagozer/openldap:1.1.7
+=======
           image: chicagozer/openldap:1.2.3
+>>>>>>> b423dd28df432bb5ad4c74dd3ba7a4a81a80483c
           volumeMounts:
             - name: ldap-data
               mountPath: /var/lib/ldap
@@ -34,9 +38,9 @@ spec:
             - name: LDAP_DOMAIN
               value: "xtime.com"
             - name: LDAP_ADMIN_PASSWORD
-              value: "admin"
+              value: "chang3m3"
             - name: LDAP_CONFIG_PASSWORD
-              value: "config"
+              value: "chang3m3"
             - name: LDAP_READONLY_USER
               value: "True"
             - name: LDAP_READONLY_USER_USERNAME
@@ -68,7 +72,7 @@ spec:
             - name: LDAP_REPLICATION_HOSTS
               value: "#PYTHON2BASH:['ldap://ldap-one-service', 'ldap://ldap-two-service']"
             - name: LDAP_REMOVE_CONFIG_AFTER_SETUP
-              value: "true"
+              value: "false"
         - name: ldap-backup
           image: osixia/openldap-backup:0.1.8
           volumeMounts:
@@ -87,14 +91,18 @@ spec:
               value: "15"
       volumes:
         - name: ldap-data
-          hostPath:
-            path: "/data/ldap/db"
+          emptyDir: {}
+          #hostPath:
+          #  path: "/data/ldap/db"
         - name: ldap-config
-          hostPath:
-            path: "/data/ldap/config"
+          emptyDir: {}
+          #hostPath:
+          #  path: "/data/ldap/config"
         - name: ldap-backup
-          hostPath:
-            path: "/data/ldap/backup"
+          emptyDir: {}
+          #hostPath:
+          #  path: "/data/ldap/backup"
         - name: ldap-certs
-          hostPath:
-            path: "/data/ldap/certs"
+          emptyDir: {}
+          #hostPath:
+          #  path: "/data/ldap/certs"
