@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: ldap
-          image: chicagozer/openldap:1.2.4
+          image: chicagozer/openldap:1.2.5
           volumeMounts:
             - name: ldap-data
               mountPath: /var/lib/ldap
