@@ -1,5 +1,5 @@
 NAME = chicagozer/openldap
-VERSION = 1.2.3
+VERSION = 1.2.4
 
 .PHONY: all build build-nocache test tag_latest release
 
