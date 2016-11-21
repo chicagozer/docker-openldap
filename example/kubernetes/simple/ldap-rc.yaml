@@ -28,7 +28,7 @@ spec:
               name: openldap
           env:
             - name: LDAP_LOG_LEVEL
-              value: "256"
+              value: "0"
             - name: LDAP_ORGANISATION
               value: "Xtime Inc."
             - name: LDAP_DOMAIN
