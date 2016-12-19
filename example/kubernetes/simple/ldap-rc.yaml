@@ -23,6 +23,10 @@ spec:
               mountPath: /etc/ldap/slapd.d
             - name: ldap-certs
               mountPath: /container/service/slapd/assets/certs
+            - name: bootstrap
+              #mountPath: /container/service/slapd/assets/config/bootstrap/ldif/99-tree.ldif
+              mountPath: /tmp/99-tree.ldif
+              subPath: 99-tree.ldif
           ports:
             - containerPort: 389
               name: openldap
@@ -68,7 +72,7 @@ spec:
             - name: LDAP_REPLICATION_HOSTS
               value: "#PYTHON2BASH:['ldap://ldap-one-service', 'ldap://ldap-two-service']"
             - name: LDAP_REMOVE_CONFIG_AFTER_SETUP
-              value: "true"
+              value: "false"
             - name: LDAP_SSL_HELPER_PREFIX
               value: "ldap"
         - name: ldap-backup
@@ -88,6 +92,12 @@ spec:
             - name: LDAP_BACKUP_TTL
               value: "15"
       volumes:
+        - name: bootstrap
+          configMap:
+            name: ldap-config
+            items:
+            - key: mqtree.ldif
+              path: 99-tree.ldif
         - name: ldap-data
           emptyDir: {}
           #hostPath:
