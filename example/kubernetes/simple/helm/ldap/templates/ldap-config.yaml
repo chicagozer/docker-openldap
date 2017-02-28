@@ -39,7 +39,7 @@ data:
     javaReferenceAddress: #0#VER#7
     javaReferenceAddress: #1#TRAN#1
     javaReferenceAddress: #2#QMGR#QM1
-    javaReferenceAddress: #3#HOST#mq.default
+    javaReferenceAddress: #3#HOST#mq
     javaReferenceAddress: #4#PORT#1414
     javaReferenceAddress: #5#CHAN#MQ.SVRCONN
     javaReferenceAddress: #6#CCS#819
@@ -67,7 +67,7 @@ data:
     javaReferenceAddress: #26#AEX#-1
     javaReferenceAddress: #27#CROPT#0
     javaReferenceAddress: #28#CRT#1800
-    javaReferenceAddress: #29#CRSHOSTS#mq.default(1414),mq2.default(1414)
+    javaReferenceAddress: #29#CRSHOSTS#mq(1414),mq2(1414)
     javaReferenceAddress: #30#TM#SYSTEM.DEFAULT.MODEL.QUEUE
     javaReferenceAddress: #31#TQPFX#
     javaReferenceAddress: #32#MRET#1
@@ -162,7 +162,7 @@ data:
     javaReferenceAddress: #121#XMSC_WMQ_PROVIDER_VERSION#UNSPECIFIED
     javaReferenceAddress: #122#XMSC_WMQ_SEND_EXIT#null
     javaReferenceAddress: #123#XMSC_WMQ_QMGR_CCSID#819
-    javaReferenceAddress: #124#XMSC_WMQ_CONNECTION_NAME_LIST_INT#mq.default(1414),mq2.default(1414)
+    javaReferenceAddress: #124#XMSC_WMQ_CONNECTION_NAME_LIST_INT#mq(1414),mq2(1414)
     javaReferenceAddress: #125#XMSC_WMQ_CF_DESCRIPTION#null
     javaReferenceAddress: #126#XMSC_WMQ_POLLING_INTERVAL#5000
     javaReferenceAddress: #127#XMSC_WMQ_SSL_CIPHER_SUITE#null
@@ -172,9 +172,4 @@ data:
 
 kind: ConfigMap
 metadata:
-  creationTimestamp: 2016-12-11T22:41:49Z
   name: ldap-config
-  namespace: default
-  resourceVersion: "50775"
-  selfLink: /api/v1/namespaces/default/configmaps/ldap-config
-  uid: 0111d946-bff3-11e6-afa1-d2cb79c790bd
